@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "kafka-app0"
+version = "0.1.0"
+description = ""
+authors = ["dpi0 <dpi0.dev@proton.me>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+kafka-python = "^2.0.2"
+faker = "^19.11.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

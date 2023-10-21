@@ -1,12 +1,20 @@
 from kafka import KafkaConsumer
 
-TOPIC0 = "topic0"
+TOPIC_ORDER_CREATED = "order_confirmed"
 
-consumer = KafkaConsumer(TOPIC0, bootstrap_servers="localhost:29092")
+consumer = KafkaConsumer(
+    TOPIC_ORDER_CREATED, bootstrap_servers="localhost:29092"
+)
 
 print("Starting Consumer...")
 
-while True:
-    for msg in consumer:
-        print("\n\n New MSG received!")
-        print(msg)
+
+def consume():
+    while True:
+        for msg in consumer:
+            print("\n\n New MSG received!")
+            print(msg.value.decode())
+
+
+if __name__ == "__main__":
+    consume()
